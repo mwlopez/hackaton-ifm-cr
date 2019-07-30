@@ -1,5 +1,14 @@
 # Hackaton CR
 
+La plataforma de pagos de ayudas sociales para Costa Rica esta construida con una arquitectura basada en microservicios que se comunican entre si a través de servicios REST/JSON.
+
+El principal objetivo es solucionar los inconvenientes que instituciones de ayuda social y el mismo Ministerio de Hacienda tienen al momento de realizar el proceso de pagos, a saber:
+
+* Los pagos llegan a los beneficiarios dias despues de realizado el pago, generando costos altos para el ministerio
+* Mejorar la transparencia y la trazabilidad de las transacciones
+* No todas las instituciones de ayuda utilizan los mismos procesos de pago
+* Hay envios de pago via correo electrónico, un proceso que esta expuesto al error humano.
+
 ### Descripción APIs
 A continuación se detallan las apis utilizadas en el sistema:
 
@@ -176,3 +185,12 @@ Api que permite Obtener uno o mas beneficiarios, y los programas asociados a la 
 - [ ] Pubicacion Registry Docker
 - [ ] Generacion de Servicios-Deployments-Pods
 - [ ] Escalabilidad
+
+Autores:
+
+JOSE MELENDEZ ALFARO
+MARCELO LOPEZ CREMONA
+ISMAEL BAUM GUTIERREZ
+PABLO QUIROS CHACON
+ALVARO ARAYA OBANDO
+
