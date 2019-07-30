@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CargarOrden">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:ReqCargarPago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReqCargarPago">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoEntidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pagos" type="tns:ArrayOfPago" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPago">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Pago" nillable="true" type="tns:Pago" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Pago">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Program" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="IBAN" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CargarOrdenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CargarOrdenResult" type="tns:ResCargarPago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResCargarPago">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Resultado" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdLote" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CargarOrdenSoapIn">
+    <wsdl:part name="parameters" element="tns:CargarOrden" />
+  </wsdl:message>
+  <wsdl:message name="CargarOrdenSoapOut">
+    <wsdl:part name="parameters" element="tns:CargarOrdenResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BackendServiceSoap">
+    <wsdl:operation name="CargarOrden">
+      <wsdl:input message="tns:CargarOrdenSoapIn" />
+      <wsdl:output message="tns:CargarOrdenSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BackendServiceSoap" type="tns:BackendServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CargarOrden">
+      <soap:operation soapAction="http://tempuri.org/CargarOrden" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BackendServiceSoap12" type="tns:BackendServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CargarOrden">
+      <soap12:operation soapAction="http://tempuri.org/CargarOrden" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BackendService">
+    <wsdl:port name="BackendServiceSoap" binding="tns:BackendServiceSoap">
+      <soap:address location="http://localhost/Backend/BackendService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BackendServiceSoap12" binding="tns:BackendServiceSoap12">
+      <soap12:address location="http://localhost/Backend/BackendService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
