@@ -6,14 +6,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
     providedIn: 'root',
 })
-export class EstadoService extends BaseService {
-    private servicio = 'api/proceso?id=1';
+export class ArchivosService extends BaseService {
+    private servicio = 'api/cargaarchivo';
 
     constructor(private http: HttpClient) {
         super();
     }
 
-    getProceso(): Observable<any> {
-        return this.get(this.http, this.servicio, {});
+    subirArchivo(rq): Observable<any> {
+        return this.post(this.http, this.servicio, rq);
     }
 }

@@ -26,6 +26,13 @@ const routes: Routes = [
                     import('./tables/tables.module').then(m => m.TablesModule),
             },
             {
+                path: 'archivos',
+                loadChildren: () =>
+                    import('./archivos/archivos.module').then(
+                        m => m.ArchivosModule
+                    ),
+            },
+            {
                 path: 'beneficios',
                 loadChildren: () =>
                     import('./beneficios/beneficios.module').then(
@@ -45,6 +52,11 @@ const routes: Routes = [
                     import('./estado-proceso/estado-proceso.module').then(
                         m => m.EstadoModule
                     ),
+            },
+            {
+                path: 'reglas',
+                loadChildren: () =>
+                    import('./reglas/reglas.module').then(m => m.ReglasModule),
             },
             {
                 path: 'forms',

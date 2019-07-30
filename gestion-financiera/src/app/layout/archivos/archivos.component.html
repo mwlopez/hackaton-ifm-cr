@@ -1,94 +1,31 @@
 <div [@routerTransition]>
     <app-page-header
-        [heading]="'Resultados del proceso'"
+        [heading]="'Carga de archivos'"
         [icon]="'fa-table'"
     ></app-page-header>
-    <div>
-        <div class="row row-stats" *ngIf="resultadoProceso !== undefined">
-            <div class="col-xl-3 col-lg-6">
-                <app-stat
-                    [bgClass]="'success'"
-                    [icon]="'fa-check'"
-                    [count]="resultadoProceso.aceptado"
-                    [label]="'Aceptados'"
-                ></app-stat>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-                <app-stat
-                    [bgClass]="'danger'"
-                    [icon]="'fa-exclamation'"
-                    [count]="resultadoProceso.rechazado"
-                    [label]="'Rechazados'"
-                ></app-stat>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-                <app-stat
-                    [bgClass]="'primary'"
-                    [icon]="'fa-balance-scale'"
-                    [count]="resultadoProceso.montoaceptado"
-                    [label]="'Monto aceptado'"
-                ></app-stat>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-                <app-stat
-                    [bgClass]="'danger'"
-                    [icon]="'fa-balance-scale'"
-                    [count]="resultadoProceso.montorechazado"
-                    [label]="'Monto rechazado'"
-                ></app-stat>
+    <div class="col col-xl-6">
+        <input type="file" (change)="handleFileInput($event.target.files)" />
+        <button
+            id="btnCargar"
+            class="btn btn-primary"
+            (click)="cargar()"
+            disabled
+        >
+            Cargar
+        </button>
+        <div class="card mb-3" *ngIf="undefined !== result && result">
+            <div class="card-header">Estado de la carga</div>
+            <div class="card-body">
+                <div class="alert alert-success">
+                    Archivo cargado.
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col col-lg-12">
-                <div class="card mb-3">
-                    <div class="card-header">
-                        Lista de beneficios
-                    </div>
-                    <div class="card-body table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Beneficiario</th>
-                                    <th>Identificación</th>
-                                    <th>Nombre</th>
-                                    <th>Monto</th>
-                                    <th>Estado</th>
-                                    <th>Descripción</th>
-                                </tr>
-                            </thead>
-                            <tbody *ngFor="let beneficiario of resultado">
-                                <tr
-                                    *ngFor="let b of beneficiario.beneficio"
-                                    [class]="
-                                        b.estado == 'Rechazado'
-                                            ? 'table-danger'
-                                            : ''
-                                    "
-                                >
-                                    <td>
-                                        {{
-                                            beneficiario.nombre +
-                                                ' ' +
-                                                beneficiario.apellido
-                                        }}
-                                    </td>
-                                    <td>
-                                        {{ beneficiario.num_documento }}
-                                    </td>
-                                    <td>{{ b.nombre }}</td>
-                                    <td>{{ b.monto }}</td>
-                                    <td>{{ b.estado }}</td>
-                                    <td>{{ b.descripcion }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div
-                            class="alert alert-warning"
-                            *ngIf="undefined === resultado"
-                        >
-                            No se han encontrado registros.
-                        </div>
-                    </div>
+        <div class="card mb-3" *ngIf="undefined !== result && !result">
+            <div class="card-header">Estado de la carga</div>
+            <div class="card-body">
+                <div class="alert alert-success">
+                    Error al cargar el archivo.
                 </div>
             </div>
         </div>

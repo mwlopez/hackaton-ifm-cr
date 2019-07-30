@@ -10,11 +10,28 @@ import { ResultadosService } from '../../../service/resultados.service';
 })
 export class ResultadosComponent implements OnInit {
     resultado: any;
+    resultadoProceso: any;
 
     constructor(private resultadossvc: ResultadosService) {}
 
     ngOnInit() {
         this.resultados();
+        this.resultadosProceso();
+    }
+
+    resultadosProceso() {
+        this.resultadossvc
+            .getResultadoProceso()
+            .toPromise()
+            .then(r => {
+                this.resultadoProceso = r;
+            })
+            .catch(er => {
+                this.resultadoProceso = undefined;
+                console.log(er);
+            });
+
+        //this.router.navigate(['/dashboard']);
     }
 
     resultados() {

@@ -16,4 +16,8 @@ export class ResultadosService extends BaseService {
     getResultados(): Observable<any> {
         return this.get(this.http, this.servicio, {});
     }
+
+    getResultadoProceso(): Observable<any> {
+        return this.get(this.http, 'api/resultadoproceso', {});
+    }
 }

@@ -28,6 +28,14 @@
             <span>{{ 'Tables' | translate }}</span>
         </a-->
         <a
+            [routerLink]="['/archivos']"
+            [routerLinkActive]="['router-link-active']"
+            class="list-group-item"
+        >
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Carga de archivos' | translate }}</span>
+        </a>
+        <a
             [routerLink]="['/beneficios']"
             [routerLinkActive]="['router-link-active']"
             class="list-group-item"
@@ -50,6 +58,14 @@
         >
             <i class="fa fa-fw fa-table"></i>&nbsp;
             <span>{{ 'Estado del proceso' | translate }}</span>
+        </a>
+        <a
+            [routerLink]="['/reglas']"
+            [routerLinkActive]="['router-link-active']"
+            class="list-group-item"
+        >
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Configuración de reglas' | translate }}</span>
         </a>
         <!--a
             [routerLink]="['/forms']"
