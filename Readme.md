@@ -167,7 +167,47 @@ Api que permite Obtener uno o mas beneficiarios, y los programas asociados a la 
     }
     ]
   ```
+#### Obtener
 
+Valida la información de una cuenta SINPE
+* Verbo: POST
+* Request
+/ObtenerInformacionCuenta
+{
+  "IBAN": "sample string 1",
+  "Identificacion": "sample string 2"
+}
+
+Carga una lista de pagos desde una entidad
+* Verbo: POST
+* Request
+{
+  "CodigoEntidad": "sample string 1",
+  "Pagos": [
+    {
+      "Id": "sample string 1",
+      "FirstName": "sample string 2",
+      "LastName": "sample string 3",
+      "Email": "sample string 4",
+      "Description": "sample string 5",
+      "Program": "sample string 6",
+      "Date": "2019-07-30T14:56:20.1922105-06:00",
+      "Value": 8.0,
+      "IBAN": "sample string 9"
+    },
+    {
+      "Id": "sample string 1",
+      "FirstName": "sample string 2",
+      "LastName": "sample string 3",
+      "Email": "sample string 4",
+      "Description": "sample string 5",
+      "Program": "sample string 6",
+      "Date": "2019-07-30T14:56:20.1922105-06:00",
+      "Value": 8.0,
+      "IBAN": "sample string 9"
+    }
+  ]
+}
 
 ### Lista de tareas
 - [x] Seguridad
