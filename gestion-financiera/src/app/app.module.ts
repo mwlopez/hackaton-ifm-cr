@@ -9,9 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 import { AuthInterceptor } from 'src/interceptor/auth-interceptor';
-import {NgxSpinnerModule, NgxSpinnerService} from 'ngx-spinner';
-import {FormsModule} from '@angular/forms';
-
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
@@ -22,19 +21,18 @@ import {FormsModule} from '@angular/forms';
         LanguageTranslationModule,
         AppRoutingModule,
         NgxSpinnerModule,
-        FormsModule
-
+        FormsModule,
     ],
     declarations: [AppComponent],
     providers: [
         NgxSpinnerService,
         AuthGuard,
-        {
+        /*{
             provide: HTTP_INTERCEPTORS,
             useClass: AuthInterceptor,
             multi: true
-          },
+        },*/
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

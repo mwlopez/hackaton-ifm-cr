@@ -1,30 +1,85 @@
-<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+<nav
+    class="sidebar"
+    [ngClass]="{ sidebarPushRight: isActive, collapsed: collapsed }"
+>
     <div class="list-group">
-        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <!--a
+            routerLink="/dashboard"
+            [routerLinkActive]="['router-link-active']"
+            class="list-group-item"
+        >
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;
             <span>{{ 'Dashboard' | translate }}</span>
         </a>
-        <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a
+            [routerLink]="['/charts']"
+            [routerLinkActive]="['router-link-active']"
+            class="list-group-item"
+        >
             <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;
             <span>{{ 'Charts' | translate }}</span>
         </a>
-        <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a
+            [routerLink]="['/tables']"
+            [routerLinkActive]="['router-link-active']"
+            class="list-group-item"
+        >
             <i class="fa fa-fw fa-table"></i>&nbsp;
             <span>{{ 'Tables' | translate }}</span>
+        </a-->
+        <a
+            [routerLink]="['/beneficios']"
+            [routerLinkActive]="['router-link-active']"
+            class="list-group-item"
+        >
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Beneficiarios' | translate }}</span>
         </a>
-        <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a
+            [routerLink]="['/resultados']"
+            [routerLinkActive]="['router-link-active']"
+            class="list-group-item"
+        >
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Resultados' | translate }}</span>
+        </a>
+        <a
+            [routerLink]="['/estado']"
+            [routerLinkActive]="['router-link-active']"
+            class="list-group-item"
+        >
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Estado del proceso' | translate }}</span>
+        </a>
+        <!--a
+            [routerLink]="['/forms']"
+            [routerLinkActive]="['router-link-active']"
+            class="list-group-item"
+        >
             <i class="fa fa-fw fa-edit"></i>&nbsp;
             <span>{{ 'Forms' | translate }}</span>
         </a>
-        <a [routerLink]="['/bs-element']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a
+            [routerLink]="['/bs-element']"
+            [routerLinkActive]="['router-link-active']"
+            class="list-group-item"
+        >
             <i class="fa fa-fw fa-desktop"></i>&nbsp;
             <span>{{ 'Bootstrap Element' | translate }}</span>
         </a>
-        <a [routerLink]="['/grid']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a
+            [routerLink]="['/grid']"
+            [routerLinkActive]="['router-link-active']"
+            class="list-group-item"
+        >
             <i class="fa fa-fw fa-wrench"></i>&nbsp;
             <span>{{ 'Bootstrap Grid' | translate }}</span>
         </a>
-        <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a
+            [routerLink]="['/components']"
+            [routerLinkActive]="['router-link-active']"
+            class="list-group-item"
+        >
             <i class="fa fa-th-list"></i>&nbsp;
             <span>{{ 'Component' | translate }}</span>
         </a>
@@ -56,53 +111,84 @@
                 </ul>
             </li>
         </div>
-        <a [routerLink]="['/blank-page']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a
+            [routerLink]="['/blank-page']"
+            [routerLinkActive]="['router-link-active']"
+            class="list-group-item"
+        >
             <i class="fa fa-file-o"></i>&nbsp;
             <span>{{ 'Blank Page' | translate }}</span>
-        </a>
+        </a-->
 
         <div class="header-fields">
             <a (click)="rltAndLtr()" class="list-group-item">
                 <span><i class="fa fa-arrows-h"></i>&nbsp; RTL/LTR</span>
             </a>
             <div class="nested-menu">
-                <a class="list-group-item" (click)="addExpandClass('languages')">
-                    <span><i class="fa fa-language"></i>&nbsp; {{ 'Language' | translate }} <b class="caret"></b></span>
+                <a
+                    class="list-group-item"
+                    (click)="addExpandClass('languages')"
+                >
+                    <span
+                        ><i class="fa fa-language"></i>&nbsp;
+                        {{ 'Language' | translate }} <b class="caret"></b
+                    ></span>
                 </a>
                 <li class="nested" [class.expand]="showMenu === 'languages'">
                     <ul class="submenu">
                         <li>
-                            <a href="javascript:void(0)" (click)="changeLang('en')">
+                            <a
+                                href="javascript:void(0)"
+                                (click)="changeLang('en')"
+                            >
                                 {{ 'English' | translate }}
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" (click)="changeLang('fr')">
+                            <a
+                                href="javascript:void(0)"
+                                (click)="changeLang('fr')"
+                            >
                                 {{ 'French' | translate }}
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" (click)="changeLang('ur')">
+                            <a
+                                href="javascript:void(0)"
+                                (click)="changeLang('ur')"
+                            >
                                 {{ 'Urdu' | translate }}
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" (click)="changeLang('es')">
+                            <a
+                                href="javascript:void(0)"
+                                (click)="changeLang('es')"
+                            >
                                 {{ 'Spanish' | translate }}
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" (click)="changeLang('it')">
+                            <a
+                                href="javascript:void(0)"
+                                (click)="changeLang('it')"
+                            >
                                 {{ 'Italian' | translate }}
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" (click)="changeLang('fa')">
+                            <a
+                                href="javascript:void(0)"
+                                (click)="changeLang('fa')"
+                            >
                                 {{ 'Farsi' | translate }}
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" (click)="changeLang('de')">
+                            <a
+                                href="javascript:void(0)"
+                                (click)="changeLang('de')"
+                            >
                                 {{ 'German' | translate }}
                             </a>
                         </li>
@@ -117,22 +203,37 @@
                     <ul class="submenu">
                         <li>
                             <a href="javascript:void(0)">
-                                <span><i class="fa fa-fw fa-user"></i> {{ 'Profile' | translate }}</span>
+                                <span
+                                    ><i class="fa fa-fw fa-user"></i>
+                                    {{ 'Profile' | translate }}</span
+                                >
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)">
-                                <span><i class="fa fa-fw fa-envelope"></i> {{ 'Inbox' | translate }}</span>
+                                <span
+                                    ><i class="fa fa-fw fa-envelope"></i>
+                                    {{ 'Inbox' | translate }}</span
+                                >
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)">
-                                <span><i class="fa fa-fw fa-gear"></i> {{ 'Settings' | translate }}</span>
+                                <span
+                                    ><i class="fa fa-fw fa-gear"></i>
+                                    {{ 'Settings' | translate }}</span
+                                >
                             </a>
                         </li>
                         <li>
-                            <a [routerLink]="['/login']" (click)="onLoggedout()">
-                                <span><i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' | translate }}</span>
+                            <a
+                                [routerLink]="['/login']"
+                                (click)="onLoggedout()"
+                            >
+                                <span
+                                    ><i class="fa fa-fw fa-power-off"></i>
+                                    {{ 'Log Out' | translate }}</span
+                                >
                             </a>
                         </li>
                     </ul>
@@ -140,8 +241,15 @@
             </div>
         </div>
     </div>
-    <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
-        <i class="fa fa-fw fa-angle-double-{{collapsed?'right':'left'}}"></i>&nbsp;
+    <div
+        class="toggle-button"
+        [ngClass]="{ collapsed: collapsed }"
+        (click)="toggleCollapsed()"
+    >
+        <i
+            class="fa fa-fw fa-angle-double-{{ collapsed ? 'right' : 'left' }}"
+        ></i
+        >&nbsp;
         <span>{{ 'Collapse Sidebar' | translate }}</span>
     </div>
 </nav>
