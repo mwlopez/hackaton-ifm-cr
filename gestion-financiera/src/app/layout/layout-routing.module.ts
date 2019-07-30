@@ -7,7 +7,7 @@ const routes: Routes = [
         path: '',
         component: LayoutComponent,
         children: [
-            { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
+            { path: '', redirectTo: 'resultados', pathMatch: 'prefix' },
             {
                 path: 'dashboard',
                 loadChildren: () =>
