@@ -81,8 +81,7 @@ Api que permite Obtener uno o mas beneficiarios, y los programas asociados a la 
   * HttpStatus: 202
   * Body
 
-```
-{
+```{
     "nombre": "Pamela",
     "apellido": "Ramirez",
     "num_documento": "2345678",
@@ -122,8 +121,7 @@ Api que permite Obtener uno o mas beneficiarios, y los programas asociados a la 
 * Response
   * HttpStatus: 202
   * Body:
-  ```
-  [
+  ```[
     {
         "id": 0,
         "nombre": "Deanna",
