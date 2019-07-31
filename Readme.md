@@ -173,15 +173,17 @@ Valida la información de una cuenta SINPE
 * Verbo: POST
 * Request
 /ObtenerInformacionCuenta
-{
+```{
   "IBAN": "sample string 1",
   "Identificacion": "sample string 2"
 }
+```
 
 Carga una lista de pagos desde una entidad
 * Verbo: POST
 * Request
-{
+
+```{
   "CodigoEntidad": "sample string 1",
   "Pagos": [
     {
@@ -208,6 +210,7 @@ Carga una lista de pagos desde una entidad
     }
   ]
 }
+```
 
 ### Lista de tareas
 - [x] Seguridad
