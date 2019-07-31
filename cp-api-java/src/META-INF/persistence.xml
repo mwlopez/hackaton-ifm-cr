@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="HTP" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>java:/PostgresDS</jta-data-source>
+        <class>cpapi.entities.LotePagoEncabezado</class>
+        <class>cpapi.entities.LotePagoDetalle</class>
+        <class>cpapi.entities.EstadoProceso</class>
+        <class>cpapi.entities.LoteEnvio</class>
+        <class>cpapi.entities.BeneficiarioDemo</class>
+        <class>cpapi.entities.Entidad</class>
+        <class>cpapi.entities.TipoEstado</class>
+        <class>cpapi.entities.EstadoprocesoDemo</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <shared-cache-mode>NONE</shared-cache-mode>
+        <properties>
+            <property name="eclipselink.target-server" value="JBoss"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/unificadb"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="eclipselink.query-results-cache" value="false"/>
+            <property name="eclipselink.flush-clear.cache" value="Drop"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:postgresql://10.14.14.61:5436/demoifm"/>
+            <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
+        </properties>
+    </persistence-unit>
+</persistence>
