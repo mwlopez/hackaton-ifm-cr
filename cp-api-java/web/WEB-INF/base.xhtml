@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <title>hackaton - <ui:insert name="title"/></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous"/>
+    <!-- h:outputStylesheet name="css/fa.min.css" library="hackaton"/ -->
+    <h:outputStylesheet name="css/app.css" library="hackaton"/>
+    <ui:insert name="head-css"/>
+</h:head>
+<h:body styleClass="app-body">
+    <a name="top"/>
+    <h:form>
+        <nav class="navbar navbar-expand-md navbar-light u-bg-light">
+            <h:commandLink action="#{indexController.goHome}" styleClass="navbar-brand" style="text-decoration: none">
+                <h:graphicImage library="hackaton" name="img/logo.png" width="32" height="32" /> aplicación
+            </h:commandLink>
+            <h:commandLink action="#{indexController.goHome}" styleClass="btn btn-outline-primary">
+                Inicio
+            </h:commandLink>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"/>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"></li>
+                </ul>
+                <!-- h:commandLink action="# - -{indexController.goPrefs}" styleClass="btn btn-outline-dark">
+                    <h:outputText value="#-{loginController.usuario.nombreCompleto}"/>
+                    <i class="fal fa-user"/>
+                </h:commandLink-->
+                <!--h:commandLink action="#{loginController.doLogout}" styleClass="btn btn-outline-dark" >
+                    Salir <i class="fal fa-sign-out"/></h:commandLink -->
+            </div>
+        </nav>
+    </h:form>
+    <div class="u-wrapper-ce">
+        <div class="u-wrapper">
+            <div class="u-content-ce">
+                <div class="u-content-ce-title">
+                    <h5><ui:insert name="icon"/><ui:insert name="title"/></h5>
+                </div>
+                <ui:insert name="content"/>
+            </div>
+        </div>
+    </div>
+    <footer class="app-footer">
+        @aaocr
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <ui:insert name="script"/>
+</h:body>
+</html>

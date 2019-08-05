@@ -1,0 +1,14 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/WEB-INF/base.xhtml">
+
+    <ui:define name="title">Inicio</ui:define>
+    <ui:define name="content">
+        Contenido
+        <h:form>
+            <h:commandButton action="#{indexController.test}" value="TEST"/>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

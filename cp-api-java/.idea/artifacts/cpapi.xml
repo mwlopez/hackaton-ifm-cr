@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="cpapi">
+    <output-path>$PROJECT_DIR$/out/artifacts/cpapi.war</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="cpapi/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="cpapi" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="com.ethlo.time:itu:1.2" />
+          <element id="library" level="project" name="org.apache.commons:commons-email:1.5" />
+          <element id="library" level="project" name="com.google.zxing:javase:3.3.3" />
+          <element id="library" level="project" name="org.eclipse.persistence:eclipselink:2.7.4" />
+          <element id="library" level="project" name="com.squareup.okhttp3:okhttp:3.7.0" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
